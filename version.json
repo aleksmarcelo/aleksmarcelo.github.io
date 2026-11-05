@@ -1,0 +1,29 @@
+{
+  "packageName": "com.tugosiptv",
+  "versionCode": 2002,
+  "versionName": "7.1.0",
+  "minSdk": 23,
+  "notes": "Atualização do Beagle IPTV pelo GitHub com seleção automática da arquitetura, progresso de download e verificação do APK. Melhorias de favoritos, vibração e compartilhamento.",
+  "apks": {
+    "arm64-v8a": {
+      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v7.1.0/Beagle-IPTV-7.1.0-projetor-tvstick-arm64-v8a.apk",
+      "sha256": "0f80008ddede93b75587d275bd0c2832703f8177b42a27d8bf73dbf0c4b549c5",
+      "size": 61092809
+    },
+    "armeabi-v7a": {
+      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v7.1.0/Beagle-IPTV-7.1.0-tvstick-armeabi-v7a.apk",
+      "sha256": "a5f02b9eccc40cd0978b96afb86e1649bfbd6f12c605e2d1df780ed8d7a37358",
+      "size": 48251859
+    },
+    "x86": {
+      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v7.1.0/Beagle-IPTV-7.1.0-pc-x86.apk",
+      "sha256": "e11b34e37e4fbc95c2df708170eb3ce0f33db8a25634246726aae6f7680b0c38",
+      "size": 56968107
+    },
+    "x86_64": {
+      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v7.1.0/Beagle-IPTV-7.1.0-pc-x86_64.apk",
+      "sha256": "87509217e20653e8288c02ae601791b85fde019cc0fe364d262f438c023e578c",
+      "size": 67023802
+    }
+  }
+}
