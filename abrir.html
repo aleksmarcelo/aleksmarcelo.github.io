@@ -4,8 +4,8 @@
 <body><main><h1>Beagle IPTV</h1><p id="message">Recebeu uma indicação? Abra o conteúdo no aplicativo.</p><a id="open" hidden>Abrir no Beagle IPTV</a><small>É necessário ter o aplicativo instalado e o conteúdo disponível na sua conta. Esta página não fornece filmes ou credenciais.</small></main>
 <script>
 const q=new URLSearchParams(location.search), type=q.get('tipo'), id=q.get('id');
-if(['movie','series'].includes(type)&&/^\d+$/.test(id||'')){
+if(['movie','series','live'].includes(type)&&/^\d+$/.test(id||'')){
  const button=document.getElementById('open');button.href='beagleiptv://'+type+'/'+encodeURIComponent(id);button.hidden=false;
- document.getElementById('message').textContent='Abra '+(type==='movie'?'o filme':'a série')+' compartilhado no Beagle IPTV.';
-}else{document.getElementById('message').textContent='Abra um link de filme ou série compartilhado pelo aplicativo.';}
+ document.getElementById('message').textContent='Abra '+(type==='live'?'o canal':type==='movie'?'o filme':'a série')+' compartilhado no Beagle IPTV.';
+}else{document.getElementById('message').textContent='Abra um link de filme, série ou canal compartilhado pelo aplicativo.';}
 </script></body></html>
