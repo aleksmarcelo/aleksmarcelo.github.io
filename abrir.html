@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Beagle IPTV · Abrir conteúdo</title>
+<style>body{margin:0;background:#101722;color:#edf4fa;font:18px system-ui;display:grid;min-height:100vh;place-items:center}main{max-width:520px;margin:24px;padding:36px;border:1px solid #334256;border-radius:24px;background:#182433}h1{font-size:32px}p{line-height:1.6;color:#bbc9da}a{display:inline-block;padding:16px 24px;border-radius:12px;background:#f6c85d;color:#19212a;text-decoration:none;font-weight:700}small{display:block;margin-top:24px;color:#a9b9cd}</style></head>
+<body><main><h1>Beagle IPTV</h1><p id="message">Recebeu uma indicação? Abra o conteúdo no aplicativo.</p><a id="open" hidden>Abrir no Beagle IPTV</a><small>É necessário ter o aplicativo instalado e o conteúdo disponível na sua conta. Esta página não fornece filmes ou credenciais.</small></main>
+<script>
+const q=new URLSearchParams(location.search), type=q.get('tipo'), id=q.get('id');
+if(['movie','series'].includes(type)&&/^\d+$/.test(id||'')){
+ const button=document.getElementById('open');button.href='beagleiptv://'+type+'/'+encodeURIComponent(id);button.hidden=false;
+ document.getElementById('message').textContent='Abra '+(type==='movie'?'o filme':'a série')+' compartilhado no Beagle IPTV.';
+}else{document.getElementById('message').textContent='Abra um link de filme ou série compartilhado pelo aplicativo.';}
+</script></body></html>
