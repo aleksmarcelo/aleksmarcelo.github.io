@@ -1,11 +1,24 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Beagle IPTV · Abrir conteúdo</title>
-<style>body{margin:0;background:#101722;color:#edf4fa;font:18px system-ui;display:grid;min-height:100vh;place-items:center}main{max-width:520px;margin:24px;padding:36px;border:1px solid #334256;border-radius:24px;background:#182433}h1{font-size:32px}p{line-height:1.6;color:#bbc9da}a{display:inline-block;padding:16px 24px;border-radius:12px;background:#f6c85d;color:#19212a;text-decoration:none;font-weight:700}small{display:block;margin-top:24px;color:#a9b9cd}</style></head>
-<body><main><h1>Beagle IPTV</h1><p id="message">Recebeu uma indicação? Abra o conteúdo no aplicativo.</p><a id="open" hidden>Abrir no Beagle IPTV</a><small>É necessário ter o aplicativo instalado e o conteúdo disponível na sua conta. Esta página não fornece filmes ou credenciais.</small></main>
+<style>body{margin:0;background:#101722;color:#edf4fa;font:18px system-ui;display:grid;min-height:100vh;place-items:center}main{max-width:520px;margin:24px;padding:36px;border:1px solid #334256;border-radius:24px;background:#182433}h1{font-size:32px}p{line-height:1.6;color:#bbc9da}a{display:inline-block;padding:16px 24px;border-radius:12px;background:#f6c85d;color:#19212a;text-decoration:none;font-weight:700}small{display:block;margin-top:24px;color:#a9b9cd}[hidden]{display:none!important}.downloads{margin-top:28px;padding-top:24px;border-top:1px solid #334256}.downloads h2{font-size:22px;margin:0 0 12px}.downloads a{display:block;margin:10px 0;padding:13px 18px;font-size:15px}.downloads .all{background:#293b50;color:#edf4fa}#version{font-size:15px}</style></head>
+<body><main><h1>Beagle IPTV</h1><p id="message">Recebeu uma indicação? Abra o conteúdo no aplicativo.</p><a id="open" hidden>Abrir no Beagle IPTV</a><small>É necessário ter o aplicativo instalado e o conteúdo disponível na sua conta. Esta página não fornece filmes ou credenciais.</small><section class="downloads"><h2>Baixar o aplicativo</h2><p id="version">APKs para Android 6 ou superior.</p><div id="apk-links"></div><a class="all" href="https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/latest">Ver todos os downloads</a></section></main>
 <script>
 const q=new URLSearchParams(location.search), type=q.get('tipo'), id=q.get('id');
 if(['movie','series','live'].includes(type)&&/^\d+$/.test(id||'')){
  const button=document.getElementById('open');button.href='beagleiptv://'+type+'/'+encodeURIComponent(id);button.hidden=false;
  document.getElementById('message').textContent='Abra '+(type==='live'?'o canal':type==='movie'?'o filme':'a série')+' compartilhado no Beagle IPTV.';
 }else{document.getElementById('message').textContent='Abra um link de filme, série ou canal compartilhado pelo aplicativo.';}
+fetch('version.json', {cache:'no-store'}).then(response => {
+ if(!response.ok) throw new Error('Manifesto indisponível');
+ return response.json();
+}).then(version => {
+ document.getElementById('version').textContent='Versão '+version.versionName+' · Android 6 ou superior';
+ const labels={'arm64-v8a':'Celular, projetor e TV stick · ARM64','armeabi-v7a':'TV stick · ARM de 32 bits','x86_64':'Android para PC · x86 de 64 bits','x86':'Android para PC · x86 de 32 bits'};
+ for(const [abi,label] of Object.entries(labels)){
+  const apk=version.apks?.[abi];
+  if(!apk || !apk.url.startsWith('https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/')) continue;
+  const link=document.createElement('a');link.href=apk.url;link.textContent=label;
+  document.getElementById('apk-links').appendChild(link);
+ }
+}).catch(()=>{});
 </script></body></html>
