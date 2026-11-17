@@ -1,28 +1,28 @@
 {
   "packageName": "com.tugosiptv",
-  "versionCode": 2003,
-  "versionName": "0.2.1",
+  "versionCode": 2005,
+  "versionName": "0.2.3",
   "minSdk": 23,
-  "notes": "Beagle IPTV 0.2.1",
+  "notes": "Beagle IPTV 0.2.3: canais agrupados com todas as fontes preservadas; reconexão percorre as fontes disponíveis e lembra a que funcionou durante a sessão; favoritos usam a maior qualidade; programação dos favoritos atualizada ao entrar em Live TV; programação vazia ou vencida baixada ao selecionar o canal; melhorias na rolagem Bluetooth, orientação paisagem e ocultação dos avisos de reconexão.",
   "apks": {
     "arm64-v8a": {
-      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v0.2.1/Beagle-IPTV-0.2.1-projetor-tvstick-arm64-v8a.apk",
-      "sha256": "c5228a4f852b8ba87a59d5dd0ea30f15f2eaddafbe7cb61c610624cd5b8cb6a2",
+      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v0.2.3/Beagle-IPTV-0.2.3-projetor-tvstick-arm64-v8a.apk",
+      "sha256": "dd280585a38a66660b7f5160e6cdfc4a46766097107d86437505e91d3ad53574",
       "size": 61109193
     },
     "armeabi-v7a": {
-      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v0.2.1/Beagle-IPTV-0.2.1-tvstick-armeabi-v7a.apk",
-      "sha256": "0d3b31ccbba9a22aea40b22fc83e2c9e17fc7070278f866abf82904bacee53e2",
+      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v0.2.3/Beagle-IPTV-0.2.3-tvstick-armeabi-v7a.apk",
+      "sha256": "266d2ca463a0146c8b8ffa8e8ddcb01ba229b200356b3c3b69405dacaea71b6e",
       "size": 48268243
     },
     "x86": {
-      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v0.2.1/Beagle-IPTV-0.2.1-pc-x86.apk",
-      "sha256": "d5b1a86e87c42e9e1684d98845790de84aa02af2912feca36aa737fdc6d2b291",
+      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v0.2.3/Beagle-IPTV-0.2.3-pc-x86.apk",
+      "sha256": "7bb62b59ce44e12aefd6f81babe4eb86fe5ac5e7214533139fadf29b732ec14a",
       "size": 56984491
     },
     "x86_64": {
-      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v0.2.1/Beagle-IPTV-0.2.1-pc-x86_64.apk",
-      "sha256": "c352afbb04efc2a2c2e2152d178f7c3fd9ad5b17cf4262edf0b883a91e4721db",
+      "url": "https://github.com/aleksmarcelo/aleksmarcelo.github.io/releases/download/v0.2.3/Beagle-IPTV-0.2.3-pc-x86_64.apk",
+      "sha256": "ce1497513061bfbd23202238d192df42447692440f06a3e051e3e54450615dd1",
       "size": 67040186
     }
   }
